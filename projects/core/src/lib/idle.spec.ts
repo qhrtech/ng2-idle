@@ -411,12 +411,9 @@ describe('core/Idle', () => {
         spyOn(instance.onTimeout, 'emit').and.callThrough();
 
         instance.setTimeout(3);
-        expiry.mockNow = new Date();
         instance.watch();
 
-        expiry.mockNow = new Date(
-          expiry.now().getTime() + instance.getIdle() * 1000
-        );
+
         tick(3000);
         expect(instance.isIdling()).toBe(true);
 
@@ -456,12 +453,8 @@ describe('core/Idle', () => {
         spyOn(instance.onInterrupt, 'emit').and.callThrough();
 
         instance.setTimeout(3);
-        expiry.mockNow = new Date();
         instance.watch();
 
-        expiry.mockNow = new Date(
-          expiry.now().getTime() + instance.getIdle() * 1000
-        );
         tick(3000);
         expect(instance.isIdling()).toBe(true);
 
@@ -499,12 +492,8 @@ describe('core/Idle', () => {
         spyOn(instance.onTimeoutWarning, 'emit').and.callThrough();
 
         instance.setTimeout(3);
-        expiry.mockNow = new Date();
         instance.watch();
 
-        expiry.mockNow = new Date(
-          expiry.now().getTime() + instance.getIdle() * 1000
-        );
         tick(3000);
         // we're going to check that it's idling, then force it to not be
         expect(instance.isIdling()).toBe(true);
@@ -653,14 +642,9 @@ describe('core/Idle', () => {
         instance.setAutoResume(AutoResume.notIdle);
         instance.setIdle(3);
 
-        const now = new Date();
-        expiry.mockNow = now;
         instance.watch();
         spyOn(instance, 'watch').and.callThrough();
 
-        expiry.mockNow = new Date(
-          expiry.now().getTime() + instance.getIdle() * 1000
-        );
         tick(2000);
 
         expect(instance.isIdling()).toBe(false);
