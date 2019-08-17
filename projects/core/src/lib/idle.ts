@@ -410,7 +410,10 @@ export class Idle implements OnDestroy {
     }
 
     this.onTimeoutWarning.emit(this.countdown);
-    this.countdown--;
+
+    const countdownMs = ((this.timeoutVal - 1) * 1000) + diff;
+    this.countdown = countdownMs / 1000;
+    //this.countdown--;
   }
 
   private safeClearInterval(handleName: string): void {

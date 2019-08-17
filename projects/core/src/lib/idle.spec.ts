@@ -277,15 +277,10 @@ describe('core/Idle', () => {
 
         instance.setTimeout(3);
         instance.setInterrupts([source]);
-
-        expiry.mockNow = new Date();
         instance.watch();
 
         expect(source.isAttached).toBe(true);
 
-        expiry.mockNow = new Date(
-          expiry.now().getTime() + instance.getIdle() * 1000
-        );
         tick(30000);
         tick(1000);
         tick(1000);
@@ -431,12 +426,8 @@ describe('core/Idle', () => {
         spyOn(instance.onTimeout, 'emit').and.callThrough();
 
         instance.setTimeout(3);
-        expiry.mockNow = new Date();
         instance.watch();
 
-        expiry.mockNow = new Date(
-          expiry.now().getTime() + instance.getIdle() * 1000
-        );
         tick(3000);
         expect(instance.isIdling()).toBe(true);
 
@@ -811,13 +802,8 @@ describe('core/Idle', () => {
       }));
 
       it('should stop keepalive when timed out', fakeAsync(() => {
-        expiry.mockNow = new Date();
         instance.watch();
         expect(svc.isRunning).toBe(true);
-
-        expiry.mockNow = new Date(
-          expiry.now().getTime() + instance.getIdle() * 1000
-        );
         tick(3000);
         tick(1000);
         tick(1000);
