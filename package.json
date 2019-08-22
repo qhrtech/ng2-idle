@@ -15,7 +15,7 @@
   "private": true,
   "files": [
     "dist",
-    "scripts/git-release.sh"
+    "git-release.sh"
   ],
   "scripts": {
     "clean:coverage": "rimraf coverage",
