@@ -14,7 +14,8 @@
   "homepage": "https://github.com/HackedByChinese/ng2-idle.git#readme",
   "private": true,
   "files": [
-    "dist"
+    "dist",
+    "scripts/git-release.sh"
   ],
   "scripts": {
     "clean:coverage": "rimraf coverage",
