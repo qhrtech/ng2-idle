@@ -16,7 +16,7 @@ set -e
 
 result=${PWD##*/}
 # rm -vr !("dist"|"scripts")
-# shopt -s extglob
+shopt -s extglob
 rm -rv !("dist"|"git-release.sh")
 if [ $result = "core" ]
 then
