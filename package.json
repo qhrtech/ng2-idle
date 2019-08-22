@@ -35,7 +35,7 @@
     "prerelease": "npm run build",
     "release": "lerna version --conventional-commits",
     "postrelease": "npm run copy:info && node scripts/postrelease.js && npm publish dist/core && npm publish dist/keepalive",
-    "prepare": "npm run build && git-release.sh"
+    "prepare": "npm run build && ./git-release.sh"
   },
   "dependencies": {
     "@angular/animations": "~8.0.0",
