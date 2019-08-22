@@ -35,7 +35,6 @@
     "prerelease": "npm run build",
     "release": "lerna version --conventional-commits",
     "postrelease": "npm run copy:info && node scripts/postrelease.js && npm publish dist/core && npm publish dist/keepalive",
-    "postinstall": "npm run build",
     "prepare": "npm run build"
   },
   "dependencies": {
