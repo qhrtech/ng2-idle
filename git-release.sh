@@ -12,4 +12,3 @@ else
   cp -r ./dist/keepalive ../
 fi
 rm -r dist
-rm -r scripts
