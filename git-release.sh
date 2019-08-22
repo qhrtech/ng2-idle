@@ -19,11 +19,11 @@ shopt -s extglob
 # rm -rv !("dist"|"git-release.sh")
 if [ $result = "core" ]
 then
-  cp -r dist/core ../
+  cp -r ./dist/core ../
 fi
 
 if [ $result = "keepalive" ]
 then
-  cp -r dist/keepalive ../
+  cp -r ./dist/keepalive ../
 fi
-rm -r dist
+rm -r ./dist
