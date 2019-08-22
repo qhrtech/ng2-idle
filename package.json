@@ -13,8 +13,10 @@
   },
   "homepage": "https://github.com/HackedByChinese/ng2-idle.git#readme",
   "private": true,
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "install": "npm run build",
     "clean:coverage": "rimraf coverage",
     "clean:dist": "rimraf dist",
     "ng": "ng",
@@ -32,7 +34,7 @@
     "prerelease": "npm run build",
     "release": "lerna version --conventional-commits",
     "postrelease": "npm run copy:info && node scripts/postrelease.js && npm publish dist/core && npm publish dist/keepalive",
-    "prepare": "npm run build"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@angular/animations": "~8.0.0",
