@@ -9,21 +9,20 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-cd "${DIR}/.."
+cd "${DIR}"
 
 # Tell the Script to Exit if a Command Returns a Non-Zero Exit Code
 set -e
 
-# result=${PWD##*/}
-# shopt -s extglob
-# # rm -rv !("dist"|"git-release.sh")
-# if [ $result = "core" ]
-# then
-#   cp -r ./dist/core ../
-# fi
+result=${DIR##*/}
 
-# if [ $result = "keepalive" ]
-# then
-#   cp -r ./dist/keepalive ../
-# fi
-# rm -r ./dist
+shopt -s extglob
+rm -rv !("dist"|"git-release.sh")
+if [ $result = "core" ]
+then
+  `cp -r ./dist/core/ ./`
+else
+  `cp -r ./dist/keepalive/ ./`
+fi
+
+rm -r dist
