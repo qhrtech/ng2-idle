@@ -4,7 +4,7 @@ result=${PWD##*/}
 
 # rm -vr !("dist"|"scripts")
 shopt -s extglob
-rm -rv !("dist"|"git-release.sh")
+rm -rv !("dist"|"git-release.sh|node_modules")
 if [ $result = "core" ]
 then
   cp -r ./dist/core ../
