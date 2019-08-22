@@ -20,7 +20,10 @@ shopt -s extglob
 if [ $result = "core" ]
 then
   cp -r dist/core ../
-else
+fi
+
+if [ $result = "keepalive" ]
+then
   cp -r dist/keepalive ../
 fi
 rm -r dist
