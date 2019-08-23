@@ -15,8 +15,7 @@ cd "${DIR}"
 
 # shopt -s extglob
 # rm -rv !("dist"|"git-release.sh")
-packagejson=`cat ./package.json`
-# echo $npm_package_name
+
 # if [[ $packagejson == *"@ng-idle/core"* ]]; then
 #   # `cp -r ./dist/core/ ./`
 # fi
