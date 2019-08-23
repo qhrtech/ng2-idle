@@ -16,8 +16,8 @@ set -e
 
 result=${DIR##*/}
 
-shopt -s extglob
-rm -rv !("dist"|"git-release.sh")
+# shopt -s extglob
+# rm -rv !("dist"|"git-release.sh")
 if [ $result = "core" ]
 then
   `cp -r ./dist/core/ ./`
@@ -28,4 +28,4 @@ then
   `cp -r ./dist/keepalive/ ./`
 fi
 
-rm -r dist
+# rm -r dist
