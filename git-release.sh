@@ -17,11 +17,11 @@ cd "${DIR}"
 # rm -rv !("dist"|"git-release.sh")
 packagejson=`cat package.json`
 echo $packagejson
-if [[ $packagejson == *"core"* ]]; then
+if [[ $packagejson == *"@ng-idle/core"* ]]; then
   `cp -r ./dist/core/ ./`
 fi
 
-if [[ $packagejson == *"keepalive"* ]]; then
+if [[ $packagejson == *"@ng-idle/keepalive"* ]]; then
   `cp -r ./dist/keepalive/ ./`
 fi
 
