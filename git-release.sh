@@ -16,13 +16,13 @@ cd "${DIR}"
 # shopt -s extglob
 # rm -rv !("dist"|"git-release.sh")
 
-# if [[ $packagejson == *"@ng-idle/core"* ]]; then
-#   # `cp -r ./dist/core/ ./`
-# fi
+if [[ ${DIR} == *"core"* ]]; then
+  `cp -r ./dist/core/ ./`
+fi
 
-# if [[ $packagejson == *"@ng-idle/keepalive"* ]]; then
-#   # `cp -r ./dist/keepalive/ ./`
-# fi
+if [[ ${DIR} == *"keepalive"* ]]; then
+  `cp -r ./dist/keepalive/ ./`
+fi
 
 echo ${DIR} > temp
 
