@@ -11,13 +11,6 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd "${DIR}"
 
-# result=${DIR##*/}
-
-# shopt -s extglob
-# rm -rv !("dist"|"git-release.sh")
-# packagejson=`cat ./package.json`
-# echo $packagejson
-# if [[ $packagejson == *"@ng-idle/core"* ]]; then
 if [VARNAME != "my value"]
 then
   `cp -r ./dist/core/ ./`
@@ -29,12 +22,3 @@ then
 if
 
 export VARNAME="my value"
-
-
-# fi
-
-# if [[ $packagejson == *"@ng-idle/keepalive"* ]]; then
-#   `cp -r ./dist/keepalive/ ./`
-# fi
-
-# rm -r dist
