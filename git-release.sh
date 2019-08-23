@@ -11,9 +11,6 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd "${DIR}"
 
-# Tell the Script to Exit if a Command Returns a Non-Zero Exit Code
-set -e
-
 # result=${DIR##*/}
 
 # shopt -s extglob
