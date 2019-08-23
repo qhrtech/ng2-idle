@@ -36,9 +36,9 @@
     "prerelease": "npm run build",
     "release": "lerna version --conventional-commits",
     "postrelease": "npm run copy:info && node scripts/postrelease.js && npm publish dist/core && npm publish dist/keepalive",
-    "prepare": "npm run build && rimraf node_modules"
+    "prepare": "npm run build"
   },
-  "dependencies": {
+  "devDependencies": {
     "@angular/animations": "~8.0.0",
     "@angular/common": "~8.0.0",
     "@angular/compiler": "~8.0.0",
@@ -49,9 +49,7 @@
     "@angular/router": "~8.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
-  },
-  "devDependencies": {
+    "zone.js": "~0.9.1",
     "@angular-devkit/build-angular": "~0.800.0",
     "@angular-devkit/build-ng-packagr": "~0.800.0",
     "@angular/cli": "~8.0.0",
