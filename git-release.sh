@@ -15,11 +15,13 @@ cd "${DIR}"
 
 # shopt -s extglob
 # rm -rv !("dist"|"git-release.sh")
-if [[ ${DIR} == *"core"* ]]; then
+packagejson=`cat package.json`
+echo $packagejson
+if [[ $packagejson == *"core"* ]]; then
   `cp -r ./dist/core/ ./`
 fi
 
-if [[ ${DIR} == *"keepalive"* ]]; then
+if [[ $packagejson == *"keepalive"* ]]; then
   `cp -r ./dist/keepalive/ ./`
 fi
 
