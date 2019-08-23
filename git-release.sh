@@ -16,6 +16,8 @@ set -e
 
 result=${DIR##*/}
 
+echo "((((((((((((((((((((((((((((((((("
+echo $result
 # shopt -s extglob
 # rm -rv !("dist"|"git-release.sh")
 if [ $result = "core" ]
