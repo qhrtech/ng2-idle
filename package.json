@@ -31,12 +31,12 @@
     "lint": "ng lint core && ng lint keepalive",
     "lint:fix": "ng lint core --fix=true && ng lint keepalive --fix=true",
     "e2e": "ng e2e",
+    "rimraf": "rimraf",
     "copy:info": "for d in ./dist/*; do cp LICENSE README.md $d; done",
     "prerelease": "npm run build",
     "release": "lerna version --conventional-commits",
     "postrelease": "npm run copy:info && node scripts/postrelease.js && npm publish dist/core && npm publish dist/keepalive",
-    "prepare": "npm run build",
-    "postinstall": "rm -r node_modules"
+    "prepare": "npm run build && rimraf node_modules"
   },
   "dependencies": {
     "@angular/animations": "~8.0.0",
@@ -76,7 +76,7 @@
     "lerna": "^3.14.1",
     "ng-packagr": "^5.1.0",
     "protractor": "~5.4.0",
-    "rimraf": "^2.6.3",
+    "rimraf": "^2.7.1",
     "ts-node": "~7.0.0",
     "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
