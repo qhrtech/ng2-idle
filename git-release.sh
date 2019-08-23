@@ -21,7 +21,10 @@ rm -rv !("dist"|"git-release.sh")
 if [ $result = "core" ]
 then
   `cp -r ./dist/core/ ./`
-else
+fi
+
+if [ $result = "keepalive" ]
+then
   `cp -r ./dist/keepalive/ ./`
 fi
 
