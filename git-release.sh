@@ -14,19 +14,15 @@ cd "${DIR}"
 # Tell the Script to Exit if a Command Returns a Non-Zero Exit Code
 set -e
 
-result=${DIR##*/}
+# result=${DIR##*/}
 
-echo "((((((((((((((((((((((((((((((((("
-echo $result
 # shopt -s extglob
 # rm -rv !("dist"|"git-release.sh")
-if [ $result = "core" ]
-then
+if [[ ${DIR} == *"core"* ]]; then
   `cp -r ./dist/core/ ./`
 fi
 
-if [ $result = "keepalive" ]
-then
+if [[ ${DIR} == *"keepalive"* ]]; then
   `cp -r ./dist/keepalive/ ./`
 fi
 
