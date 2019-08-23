@@ -11,7 +11,10 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd "${DIR}"
 
+pwd > tmp1
+
 echo "${DIR}" > tmp
+
 
 # if [[ ${VARNAME} != "my value" ]]
 # then
