@@ -11,14 +11,14 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd "${DIR}"
 
-if [VARNAME != "my value"]
+if [[ ${VARNAME} != "my value" ]]
 then
   `cp -r ./dist/core/ ./`
-if
+fi
 
-if [VARNAME = "my value"]
+if [[ ${VARNAME} == "my value" ]]
 then
   `cp -r ./dist/keepalive/ ./`
-if
+fi
 
 export VARNAME="my value"
