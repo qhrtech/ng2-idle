@@ -13,6 +13,10 @@
   },
   "homepage": "https://github.com/HackedByChinese/ng2-idle.git#readme",
   "private": true,
+  "main": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean:coverage": "rimraf coverage",
     "clean:dist": "rimraf dist",
@@ -27,12 +31,14 @@
     "lint": "ng lint core && ng lint keepalive",
     "lint:fix": "ng lint core --fix=true && ng lint keepalive --fix=true",
     "e2e": "ng e2e",
+    "rimraf": "rimraf",
     "copy:info": "for d in ./dist/*; do cp LICENSE README.md $d; done",
     "prerelease": "npm run build",
     "release": "lerna version --conventional-commits",
-    "postrelease": "npm run copy:info && node scripts/postrelease.js && npm publish dist/core && npm publish dist/keepalive"
+    "postrelease": "npm run copy:info && node scripts/postrelease.js && npm publish dist/core && npm publish dist/keepalive",
+    "prepare": "npm run build"
   },
-  "dependencies": {
+  "devDependencies": {
     "@angular/animations": "~8.0.0",
     "@angular/common": "~8.0.0",
     "@angular/compiler": "~8.0.0",
@@ -43,9 +49,7 @@
     "@angular/router": "~8.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
-  },
-  "devDependencies": {
+    "zone.js": "~0.9.1",
     "@angular-devkit/build-angular": "~0.800.0",
     "@angular-devkit/build-ng-packagr": "~0.800.0",
     "@angular/cli": "~8.0.0",
@@ -70,7 +74,7 @@
     "lerna": "^3.14.1",
     "ng-packagr": "^5.1.0",
     "protractor": "~5.4.0",
-    "rimraf": "^2.6.3",
+    "rimraf": "^2.7.1",
     "ts-node": "~7.0.0",
     "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
