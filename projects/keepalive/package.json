@@ -29,7 +29,7 @@
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0",
-    "@ng-idle/core": "^0.0.0"
+    "@ng-idle/core": "10.0.0-qhr-beta.1"
   },
   "dependencies": {
     "tslib": "^2.0.0"
