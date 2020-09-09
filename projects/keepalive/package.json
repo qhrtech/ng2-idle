@@ -1,10 +1,10 @@
 {
   "name": "@ng-idle/keepalive",
-  "version": "10.0.0-beta.1",
+  "version": "10.0.0-qhr-beta.1",
   "description": "Module that works with @ng-idle/core to keep a user session alive while user is active.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HackedByChinese/ng2-idle.git"
+    "url": "git+https://github.com/qhrtech/ng2-idle.git"
   },
   "keywords": [
     "angular",
@@ -20,9 +20,12 @@
   "author": "Mike Grabski <me@mikegrabski.com> (http://mikegrabski.com/)",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/HackedByChinese/ng2-idle.git/issues"
+    "url": "https://github.com/qhrtech/ng2-idle.git/issues"
   },
-  "homepage": "https://github.com/HackedByChinese/ng2-idle.git#readme",
+  "homepage": "https://github.com/qhrtech/ng2-idle.git#readme",
+  "publishConfig": {
+    "registry": "https://nexus.qhrtech-gcp.com/repository/qhr-npm-registry"
+  },
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0",
